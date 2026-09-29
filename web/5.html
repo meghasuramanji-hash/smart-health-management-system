@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Newspaper Page | vtucode</title>
+<style>
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+body{
+ padding:20px;
+ font-family:Arial,sans-serif;
+ color:#000;
+ display:flex;
+ flex-direction:column;
+ min-height:100vh;
+}
+
+header,footer{
+ background:#7b38f7;
+ color:#fff;
+ padding:20px;
+ border-radius:10px;
+ text-align:center;
+ box-shadow:0 4px 6px rgba(0,0,0,.1);
+}
+
+header{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-bottom:30px;
+}
+
+header a{
+ color:#fff;
+ font-size:25px;
+ font-weight:600;
+ text-decoration:none;
+}
+
+nav{
+ display:flex;
+ gap:20px;
+}
+
+nav a{
+ color:#fff;
+ font-size:18px;
+ font-weight:bold;
+ text-decoration:none;
+}
+
+nav a:hover{
+ text-decoration:underline;
+}
+
+.content{
+ display:flex;
+ gap:20px;
+ padding:20px 0;
+}
+
+.main-content{
+ flex:1;
+ display:grid;
+ grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+ gap:20px;
+ padding:25px;
+ background:#fff;
+ border-radius:12px;
+ box-shadow:0 1px 1px rgba(9,30,66,.25),0 0 1px rgba(9,30,66,.13);
+ cursor:pointer;
+}
+
+article,section,figure,aside{
+ background:#fff;
+ border-radius:8px;
+ box-shadow:0 1px 1px rgba(9,30,66,.25),0 0 1px rgba(9,30,66,.13);
+ padding:15px;
+}
+
+article:hover{
+ background:#e7ddfb;
+}
+
+article h2{
+ color:#7b38f7;
+ font-size:1.3em;
+ margin-bottom:12px;
+}
+
+article p{
+ margin-top:10px;
+ line-height:1.2;
+}
+
+figure{
+ background:#fafafa;
+ border:1px solid #ddd;
+ text-align:center;
+}
+
+figcaption{
+ font-size:.9em;
+ color:#666;
+}
+
+img{
+ max-width:100%;
+ border-radius:8px;
+}
+
+aside{
+ width:350px;
+ position:sticky;
+ top:20px;
+ border:1px solid #ccc;
+ color:#333;
+}
+
+.related-news h3{
+ background:#000;
+ color:#fff;
+ padding:8px;
+ text-align:center;
+ border-radius:7px;
+ margin-bottom:15px;
+}
+
+.related-news ul{
+ padding:7px;
+ list-style:outside;
+}
+
+.related-news li{
+ margin-bottom:12px;
+}
+
+.related-news a{
+ color:#7b38f7;
+ font-weight:bold;
+ text-decoration:none;
+}
+
+.related-news a:hover{
+ text-decoration:underline;
+}
+
+section{
+ margin:40px 0 50px;
+}
+
+section h2{
+ background:#000;
+ color:#fff;
+ padding:10px;
+ text-align:center;
+ border-radius:10px;
+ margin-bottom:30px;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+}
+
+caption{
+ background:#d9d9d9;
+ padding:10px;
+ font-weight:bold;
+ border-bottom:2px solid #ddd;
+ border-radius:8px 8px 0 0;
+ color:#333;
+ margin-bottom:10px;
+}
+
+thead{
+ background:#007BFF;
+ color:#fff;
+}
+
+th,td{
+ padding:12px;
+ text-align:left;
+}
+
+tbody tr:nth-child(even){
+ background:#f9f9f9;
+}
+
+tbody tr:hover{
+ background:#eaeaea;
+}
+
+footer{
+ margin-top:auto;
+ font-size:18px;
+}
+
+@media(max-width:768px){
+ .content{
+  flex-direction:column;
+ }
+ aside{
+  width:100%;
+  position:static;
+ }
+ .main-content{
+  grid-template-columns:1fr;
+ }
+}
+
+@media(max-width:600px){
+ th,td{
+  padding:8px;
+  font-size:14px;
+ }
+}
+</style>
+</head>
+
+<body>
+<header>
+<a href="#">Newspaper</a>
+<nav>
+<a href="#">Home</a><a href="#">About</a><a href="#">Contact</a>
+<a href="#">Services</a><a href="#">Marketing</a><a href="#">Updates</a>
+</nav>
+</header>
+
+<div class="content">
+<main class="main-content">
+<article><h2>Article Title 1</h2><figure><img src="https://via.placeholder.com/600x400"><figcaption>Image Caption</figcaption></figure><p>Article text here.</p></article>
+<article><h2>Article Title 2</h2><figure><img src="https://via.placeholder.com/600x400"><figcaption>Image Caption</figcaption></figure><p>Article text here.</p></article>
+<article><h2>Article Title 3</h2><figure><img src="https://via.placeholder.com/600x400"><figcaption>Image Caption</figcaption></figure><p>Article text here.</p></article>
+<article><h2>Article Title 4</h2><figure><img src="https://via.placeholder.com/600x400"><figcaption>Image Caption</figcaption></figure><p>Article text here.</p></article>
+<article><h2>Article Title 5</h2><figure><img src="https://via.placeholder.com/600x400"><figcaption>Image Caption</figcaption></figure><p>Article text here.</p></article>
+<article><h2>Article Title 6</h2><figure><img src="https://via.placeholder.com/600x400"><figcaption>Image Caption</figcaption></figure><p>Article text here.</p></article>
+</main>
+
+<aside class="related-news">
+<h3>Related News</h3>
+<ul>
+<li><a href="#">Related News 1</a></li>
+<li><a href="#">Related News 2</a></li>
+<li><a href="#">Related News 3</a></li>
+</ul>
+</aside>
+</div>
+
+<section>
+<h2>Recent Posts</h2>
+<table>
+<caption>List of Posts</caption>
+<thead>
+<tr><th>Post Title</th><th>Date</th><th>Author</th></tr>
+</thead>
+<tbody>
+<tr><td>Post 1</td><td>2024-08-30</td><td>Author 1</td></tr>
+<tr><td>Post 2</td><td>2024-08-29</td><td>Author 2</td></tr>
+<tr><td>Post 3</td><td>2024-08-28</td><td>Author 3</td></tr>
+</tbody>
+</table>
+</section>
+
+<footer>© 2024 Newspaper. All rights reserved.</footer>
+</body>
+</html>
