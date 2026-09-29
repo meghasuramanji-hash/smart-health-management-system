@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Elderly Health Check</title>
+<style>
+body { font-family: Arial; padding: 20px; }
+.question { margin-bottom: 15px; }
+button { padding: 10px; background: #4CAF50; color:white; border:none; }
+</style>
+</head>
+
+<body>
+
+<h2>Elderly Health Questionnaire</h2>
+
+<div id="qContainer"></div>
+<button onclick="submitForm()">Submit</button>
+
+<script>
+let questions = [
+    "Do you experience joint pain daily?",
+    "Do you get tired quickly?",
+    "Do you have difficulty breathing?",
+    "Do you face dizziness?",
+    "Do you have diabetes?",
+    "Any heart-related issues?",
+    "Do you have trouble walking?",
+    "Do you have poor eyesight?",
+    "Hearing issues?",
+    "Do you feel lonely?",
+    "Any swelling in legs?",
+    "Do you forget things often?",
+    "Do you have sleep issues?",
+    "Do you feel stressed?",
+    "Do you feel chest discomfort?"
+];
+
+let container = document.getElementById("qContainer");
+questions.forEach((q, i) => {
+    container.innerHTML += `
+        <div class='question'>
+            ${i+1}. ${q} 
+            <select id="q${i}">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+        </div>
+    `;
+});
+
+function submitForm() {
+    let answers = {};
+    for (let i = 0; i < 15; i++) {
+        answers["q"+i] = document.getElementById("q"+i).value;
+    }
+
+    localStorage.setItem("elderData", JSON.stringify(answers));
+
+    window.location.href = "12.html";  // continue normally
+}
+</script>
+
+</body>
+</html>
